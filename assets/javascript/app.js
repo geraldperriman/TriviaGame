@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  console.log("Ready!");
   //question array starts at zero/beginning
   var currentQuestion = 0;
   //score starts at zero
@@ -43,53 +44,55 @@ $(document).ready(function(){
       currentQuestion++;
     }
     else {
-      $("p.questions").remove();
-      $("p.options").remove();
+      //$("p.questions").remove();
+      //$("p.options").remove();
       $("#questionBox").remove();
       $(".optionsList").remove();
-      $("#startGame").before('<h2 class="totalScore"> Final score: ' + score + ' / 10 questions correct!</h2>');
+      $("#startGame").before('<h2 class="totalScore"> Final score: ' + score + ' / 8 questions correct!</h2>');
       $("#startGame").val("Play Again");
-      $("#startGame").remove();
-      $("#playAgain").show();
+      //$("#startGame").remove();
+      //$("#playAgain").show();
       //resets to play again
       currentQuestion = 0;
       score = 0;
     }
   }
+
   //question/answer array of an array stored in a variable
   var triviaQuestions = [{
 	question: " Martin had a crush on a school teacher when he was younger. What was the name of the teacher?",
 	selection: ["Ms. Jackson", "Ms. Trindad", "Ms. Thomas", "Ms.Tobago"],
-	correctSelection: 1
-},   {
+	correctSelection: "Ms. Trindad"
+	},
+	{
    	question: "When Martin got fired, he picked up a plastic garbage can and threw it against the window screaming what?",
 	selection: ["Radio", "Stereo!", "Noooo!", "Damn"],
-	correctSelection: 0
+	correctSelection: "Radio"
     },
     {
     question: "Martin went on a rent strike because his rent was increased and the landlord refused to fix any of the appliances around the apartment. How much was the increase?",
 	selection: ["5.00", "50.00", "500.00", "250.00"],
-	correctSelection: 0
+	correctSelection: "5.00"
     },
     {
     question: "Pam had a boyfriend that had his own skybox in Pistons' stadium. What was his name?",
 	selection: ["Isiah", "Joe", "Simon", "Bill"],
-	correctSelection: 2
+	correctSelection: "Simon"
     },
     {
     question: " What was Gina's boss name?",
 	selection: ["Mr. Walter", "Mr.Walker", "Mr.Whitaker", "Mr.Williams"],
-	correctSelection: 2
+	correctSelection: "Mr.Whitaker"
     },
     {
     question: "Who was Martin's nemesis in high school?",
 	selection: ["Pretty Larry", "Pretty Rickey", "Pretty Boy", "Mike-Mike"],
-	correctSelection: 1
+	correctSelection: "Pretty Rickey"
     },
     {
  	question: "Who killed Mama Payne's bird?",
 	selection: ["Pam", "Martin", "Gina", "Tommy"],
-	correctSelection: 2
+	correctSelection: "Gina"
     },
     {
     question: "What are the names of Martin and Gina's exes that they invite to dinner?",
@@ -102,12 +105,12 @@ $(document).ready(function(){
 
 
 
-$(document).ready(function(){
+//$(document).ready(function(){
   $(".again").hide();
   $(".questionContainer").hide();
   $(".next").hide();
   $(".scoreDisplay").hide();
-});
+//});
 
 //Start function, unhide questions, other buttons
 $(".startGame").click(function() {
@@ -118,43 +121,3 @@ $(".startGame").click(function() {
 
 //Total number of questions
 var totalNumQuestions = $('.question').size();
-
-//Display current question, sets it at first question
-var currentQuestion = 0;
-
-//jQuery variable
-$question = $('.question');
-
-//Hide all of the questions
-$question.hide();
-
-//Show the first question
-$($question.get(currentQuestion)).fadeIn();
-
-//Click listener to get next question...
-$('.next').click(function() {
-
-//Current question disappears...
-  $($question.get(currentQuestion)).fadeOut(function() {
-
-//Questions go up one by one
-    currentQuestion = currentQuestion + 1;
-
-//Next question...
-    $($question.get(currentQuestion)).fadeIn();
-
-  });
-
-});
-
-//Scoring function
-function setScore() {
-  var score = $('input:checked[value=correct]').length
-  $('#score').text(score);
-}
-
-//Set score on input change (as user selects the correct answer)...
-$('input').change(setScore);
-
-//Set score when initialized...
-setScore();
