@@ -43,7 +43,7 @@ h2{
 	background-color: green;
 	font-size: 40px;
 	color:#ffa500;
-	margin-left: 600px;
+	margin-left: 550px;
 	//*margin-top:300px;*//
 	margin-right:270px;
 	margin-bottom: 500px;
@@ -124,8 +124,14 @@ ul {
 #footer{
 	clear:all;
 	display:block;
-	margin-top:100px;
+	margin-top:-500px;
 	margin-left: 310px;
+  margin-bottom: -1000px;
+}
+
+#bottom{
+  color:#ffa500;
+  margin-top: 900px;
 }
 
 @media only screen and (max-width: 980px) {
