@@ -58,6 +58,8 @@ $(document).ready(function(){
     }
   }
 
+  
+
   //question/answer array of an array stored in a variable
   var triviaQuestions = [{
 	question: " Martin had a crush on a school teacher when he was younger. What was the name of the teacher?",
@@ -97,7 +99,7 @@ $(document).ready(function(){
     {
     question: "What are the names of Martin and Gina's exes that they invite to dinner?",
 	selection: ["Joyce & Devon", "Helen & William", "Vera & Dexter", "Tonya & Derrick"],
-	correctSelection: 3
+	correctSelection: "Tonya & Derrick"
     },
   ];
 });
