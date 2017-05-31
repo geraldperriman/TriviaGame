@@ -113,11 +113,13 @@ h1 {
 
 label {
   background:transparent;
-  color:#ffa500;
+  color:green;
   margin:0 0 10px;
   display:block;
   font-size: 30px;
-  background-color: green;
+  background-color: #ffa500;
+  width:960px;
+  margin-left:200px;
 }
 
 label:hover {
